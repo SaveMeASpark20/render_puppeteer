@@ -22,7 +22,7 @@ const scrapeLogic = async (res) => {
 
     // Wait and click on first result
     const searchResultSelector = ".search-box__link";
-    await page.waitForSelector(searchResultSelector);
+    await page.waitForSelector(searchResultSelector, { timeout: 600000 });
     await page.click(searchResultSelector);
 
     // Locate the full title with a unique string
