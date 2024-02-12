@@ -4,10 +4,6 @@ require("dotenv").config();
 const scrapeLogic = async (res) => {
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath:
-      process.env.NODE_ENV === "production"
-        ? process.env.PUPPETEER_EXECUTABLE_PATH
-        : puppeteer.executablePath(),
   });
   try {
     const page = await browser.newPage();
